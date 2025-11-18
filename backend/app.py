@@ -7,7 +7,18 @@ from fastapi.middleware.cors import CORSMiddleware
 app = FastAPI()
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # for development; restrict for production
+    allow_origins=[
+        "http://localhost",
+        "http://localhost:3000",
+        "http://127.0.0.1",
+        "http://127.0.0.1:3000",
+        "https://marijusgudiskis.com",
+        "http://marijusgudiskis.com",
+        "https://gpx.marijusgudiskis.com",
+        "http://gpx.marijusgudiskis.com",
+        "https://gpx-backend.marijusgudiskis.com",
+        "http://gpx-backend.marijusgudiskis.com",
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -22,7 +33,7 @@ CYCLING_ROUTE = {
 }
 
 PART_MAPPING = {
-    "hiking": "hiking",
+    "hiking": "hike",
     "cycling": "cycle"
 }
 
